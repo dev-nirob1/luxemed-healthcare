@@ -154,68 +154,6 @@ p {
   letter-spacing: 0.05em;
 }
 
-/* Header & Nav (Preserved & Tweaked) */
-.top-bar {
-  background-color: var(--color-primary);
-  color: rgba(255, 255, 255, 0.9);
-  padding: 12px var(--container-padding);
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navbar {
-  padding: 24px var(--container-padding);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(253, 251, 247, 0.85); /* Matches warm bg */
-  backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  transition: padding 0.3s ease;
-}
-
-.navbar.scrolled {
-  padding: 16px var(--container-padding);
-  background: rgba(253, 251, 247, 0.95);
-  box-shadow: var(--shadow-sm);
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: -0.03em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 48px;
-}
-
-.nav-links a {
-  font-weight: 500;
-  color: var(--color-text-main);
-  position: relative;
-  font-size: 1rem;
-}
-
-.nav-links a:hover {
-  color: var(--color-secondary);
-}
-
-.mobile-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 /* Hero Section - Redesigned (Background Image) */
 .hero {
   padding: 180px var(--container-padding) 140px;
