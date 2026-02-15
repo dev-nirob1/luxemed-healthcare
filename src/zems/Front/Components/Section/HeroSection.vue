@@ -69,8 +69,8 @@ onMounted(() => {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(10, 61, 50, 0.7) 0%,
-    rgba(10, 61, 50, 0.45) 100%
+    rgba(10, 61, 50, 0.6) 0%,
+    rgba(10, 61, 50, 0.3) 100%
   );
   z-index: 1;
   backdrop-filter: blur(0px); /* Removed blur for clarity */

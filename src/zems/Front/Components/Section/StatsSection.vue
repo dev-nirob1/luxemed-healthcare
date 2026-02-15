@@ -55,7 +55,6 @@
   .stats-strip {
     flex-direction: column;
     gap: 40px;
-    padding: 40px;
   }
 }
 </style>
