@@ -38,7 +38,7 @@ const closeMenu = () => {
       <div class="mobile-close" @click="closeMenu">
         <i class="fas fa-times"></i>
       </div>
-      <li><a href="#home" @click="closeMenu">Home</a></li>
+      <li><RouterLink to="/" @click="closeMenu">Home</RouterLink></li>
       <li>
         <RouterLink to="specialities" @click="closeMenu"
           >Specialties</RouterLink
@@ -53,15 +53,19 @@ const closeMenu = () => {
         <button
           class="btn btn-primary"
           style="padding: 10px 24px; font-size: 0.9rem"
-          onclick="window.location.href = 'pages/appointment.html'"
         >
-          Book Visit
+          <RouterLink to="/appointment" @click="closeMenu"
+            >Appointment</RouterLink
+          >
         </button>
       </li>
     </ul>
   </nav>
 </template>
 <style scoped>
+.btn-primary a {
+  color: #fff !important;
+}
 /* Header & Nav (Preserved & Tweaked) */
 .top-bar {
   background-color: var(--color-primary);
@@ -104,7 +108,8 @@ const closeMenu = () => {
 
 .nav-links {
   display: flex;
-  gap: 48px;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-links a {

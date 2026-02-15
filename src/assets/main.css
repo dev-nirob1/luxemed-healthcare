@@ -113,8 +113,6 @@ p {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(10, 61, 50, 0.3);
   background-color: #0d4a3c;
 }
 
