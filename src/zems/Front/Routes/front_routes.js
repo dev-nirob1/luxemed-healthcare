@@ -4,6 +4,7 @@ import ContactPage from "../Pages/ContactPage.vue";
 import DoctorsPage from "../Pages/DoctorsPage.vue";
 import HomePage from "../Pages/HomePage.vue";
 import SpecialitiesPage from "../Pages/SpecialitiesPage.vue";
+import SpecialityDetails from "../Pages/SpecialityDetails.vue";
 
 export const front_routes = [
   {
@@ -15,6 +16,11 @@ export const front_routes = [
         path: "/specialities",
         name: "specialities",
         component: SpecialitiesPage,
+      },
+      {
+        path: "/speciality/:id",
+        name: "speciality-details",
+        component: SpecialityDetails,
       },
       {
         path: "/about",

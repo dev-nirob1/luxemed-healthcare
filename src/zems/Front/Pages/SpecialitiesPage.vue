@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
   <section class="services-grid">
     <!-- 1. Cardiology -->
@@ -14,9 +18,9 @@
           Minimally invasive heart surgery using the Da Vinci Xi system for
           faster recovery and better outcomes.
         </p>
-        <a href="cardiology.html" class="details-btn">
+        <RouterLink to="speciality/2" class="details-btn">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -34,9 +38,9 @@
           Advanced brain mapping and AI-assisted diagnostics for complex
           neurological conditions.
         </p>
-        <a href="neurology.html" class="details-btn">
+        <RouterLink to="neurology.html" class="details-btn">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -54,9 +58,9 @@
           Comprehensive care for children in a warm, fear-free environment
           designed for comfort.
         </p>
-        <a href="pediatrics.html" class="details-btn">
+        <RouterLink to="pediatrics.html" class="details-btn">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -74,9 +78,9 @@
           Personalized medicine based on your DNA profile to predict and prevent
           future illness.
         </p>
-        <a href="#" class="details-btn" onclick="alert('Coming Soon!')">
+        <RouterLink to="#" class="details-btn" onclick="alert('Coming Soon!')">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -94,9 +98,9 @@
           Joint replacement and rehabilitation using 3D-printed implants and
           robotic guidance.
         </p>
-        <a href="#" class="details-btn" onclick="alert('Coming Soon!')">
+        <RouterLink to="#" class="details-btn" onclick="alert('Coming Soon!')">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -114,9 +118,9 @@
           Targeted cancer therapies that attack tumors while preserving healthy
           tissue.
         </p>
-        <a href="#" class="details-btn" onclick="alert('Coming Soon!')">
+        <RouterLink to="#" class="details-btn" onclick="alert('Coming Soon!')">
           View Details <i class="fas fa-arrow-right"></i>
-        </a>
+        </RouterLink>
       </div>
     </div>
   </section>
