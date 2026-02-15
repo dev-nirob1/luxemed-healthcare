@@ -1,5 +1,6 @@
 import MainLayout from "../Layout/MainLayout.vue";
 import AboutPage from "../Pages/AboutPage.vue";
+import ContactPage from "../Pages/ContactPage.vue";
 import DoctorsPage from "../Pages/DoctorsPage.vue";
 import HomePage from "../Pages/HomePage.vue";
 import SpecialitiesPage from "../Pages/SpecialitiesPage.vue";
@@ -24,6 +25,11 @@ export const front_routes = [
         path: "/doctors",
         name: "doctors",
         component: DoctorsPage,
+      },
+      {
+        path: "/contact",
+        name: "contact",
+        component: ContactPage,
       },
     ],
   },
