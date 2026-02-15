@@ -45,10 +45,10 @@ const closeMenu = () => {
         >
       </li>
       <li>
-        <a href="pages/about.html" @click="closeMenu">Innovation</a>
+        <RouterLink to="about" @click="closeMenu">Innovation</RouterLink>
       </li>
-      <li><a href="pages/doctors.html" @click="closeMenu">Team</a></li>
-      <li><a href="pages/contact.html" @click="closeMenu">Contact</a></li>
+      <li><RouterLink to="doctors" @click="closeMenu">Team</RouterLink></li>
+      <li><RouterLink to="contact" @click="closeMenu">Contact</RouterLink></li>
       <li>
         <button
           class="btn btn-primary"
