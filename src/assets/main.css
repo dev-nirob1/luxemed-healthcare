@@ -355,39 +355,6 @@ p {
   transform: scale(1.05);
 }
 
-/* Stats (redesign) */
-.stats-strip {
-  display: flex;
-  justify-content: space-around;
-  padding: 60px;
-  background: var(--color-primary);
-  color: white;
-  border-radius: var(--card-radius);
-  margin: 0 var(--container-padding);
-  transform: translateY(-50%); /* Overlap Hero Image */
-  z-index: 10;
-  position: relative;
-  box-shadow: var(--shadow-lg);
-}
-
-.stat-box {
-  text-align: center;
-}
-
-.stat-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-  color: var(--color-accent);
-}
-
-.stat-box p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-
 /* About (Asymetric) */
 .about-split {
   display: grid;
@@ -580,12 +547,5 @@ p {
 
   .about-image-stack {
     height: 400px;
-  }
-
-  .stats-strip {
-    flex-direction: column;
-    gap: 40px;
-    margin-top: -60px;
-    padding: 40px;
   }
 }

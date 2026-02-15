@@ -1,6 +1,30 @@
+<script setup>
+import { onMounted, ref } from "vue";
+
+const heroContent = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  if (heroContent.value) {
+    observer.observe(heroContent.value);
+  }
+});
+</script>
+
 <template>
   <header id="home" class="hero">
-    <div class="hero-content reveal">
+    <div ref="heroContent" class="hero-content reveal">
       <span class="badge">Welcome to 2026</span>
       <h1>
         Healthcare Reimagined <br />
