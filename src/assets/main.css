@@ -42,6 +42,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -49,7 +50,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-main);
   line-height: var(--line-height-base);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -269,55 +270,6 @@ p {
   margin-bottom: 10px;
 }
 
-/* About (Asymetric) */
-.about-split {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: center;
-  padding: var(--section-spacing) var(--container-padding);
-}
-
-.about-text h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--color-secondary);
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-.about-image-stack {
-  position: relative;
-  height: 600px;
-}
-
-.about-img-1 {
-  width: 80%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: var(--card-radius);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.about-img-2 {
-  width: 60%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: var(--card-radius);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  border: 8px solid var(--color-background);
-  box-shadow: var(--shadow-lg);
-}
-
 /* Booking (Floating Glass) */
 .floating-booking {
   margin: 100px var(--container-padding);
@@ -428,14 +380,5 @@ p {
 
   .nav-links.active {
     right: 0;
-  }
-
-  .about-split {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-image-stack {
-    height: 400px;
   }
 }
