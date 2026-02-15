@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
 const isMenuOpen = ref(false);
 
@@ -39,7 +40,9 @@ const closeMenu = () => {
       </div>
       <li><a href="#home" @click="closeMenu">Home</a></li>
       <li>
-        <a href="pages/specialties.html" @click="closeMenu">Specialties</a>
+        <RouterLink to="specialities" @click="closeMenu"
+          >Specialties</RouterLink
+        >
       </li>
       <li>
         <a href="pages/about.html" @click="closeMenu">Innovation</a>
