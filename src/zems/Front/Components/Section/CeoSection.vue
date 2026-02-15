@@ -95,4 +95,9 @@
   font-family: sans-serif;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  .ceo-section {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
