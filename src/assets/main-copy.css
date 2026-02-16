@@ -106,6 +106,10 @@ ul {
 p {
   font-size: 1rem;
 }
+.image {
+  height: 100%;
+  width: 100%;
+}
 .features li {
   position: relative;
   padding-left: 1.5rem;
