@@ -98,24 +98,38 @@ import SectionTitle from "../Widget/SectionTitle.vue";
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .image .img1,
 .image .img2 {
   border-radius: 1rem;
 }
 .about-section .image .img1 {
-  width: 90%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .about-section .image .img2 {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  position: absolute;
+  position: static;
   right: 0;
   border: 5px solid var(--white-color);
   top: 50%;
+}
+
+@media (min-width: 768px) {
+  .about-section .image .img1 {
+    width: 90%;
+  }
+  .about-section .image .img2 {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+  }
 }
 /* About (Asymetric) */
 /* .about-split {
