@@ -1,5 +1,61 @@
-# Vue 3 + Vite
+# LuxeMed Healthcare 🏥
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A premium, AI-integrated healthcare platform built with professional editorial design standards.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+---
+
+## ⚡ Context Persistence
+
+**Conversation ID**: `9041f250-7c6f-4794-b0b5-bd7c0802fd71`
+
+> [!IMPORTANT]
+> If starting a new session with an AI Agent, share this ID or the contents of this README to maintain the **Luxe-Grid** coding pattern.
+
+---
+
+## 🏛️ Architecture: The "Luxe-Grid" Pattern
+
+This project follows a **Widget + Elements + Utility Grid** architecture to ensure 100% design consistency and modularity.
+
+### 1. Global Elements (`src/components/Element/`)
+
+Never use raw HTML tags for core content. Always use the globally registered atomic components:
+
+- `<BaseTitle>` (Heading 1/2)
+- `<SubTitle>` (Heading 3/4)
+- `<BaseParagraph>` (Standard Text)
+- `<BaseImage>` (Optimized images with lazy loading)
+- `<ListItem>` (Standardized list entries)
+
+### 2. Utility Grid System (`src/assets/grid.css`)
+
+Layouts are dictated by parents using utility classes. Avoid writing custom media queries in components.
+
+- **Container**: Use `.container` for central alignment.
+- **Grid Setup**: Use `all-n`, `medium-n`, or `large-n` to define column counts.
+- **Spacing**: Use `gap-n` (1-5) for grid spacing.
+- **Example**: `<div class="container medium-2 large-4 gap-2">`
+
+### 3. Styled Widgets (`src/zems/Front/Components/Widget/`)
+
+Common design patterns should be abstracted into widgets:
+
+- `SectionTitle.vue`: Standardized section headings with labels.
+- `ServicesCard.vue`: Cinematic bento-style cards.
+
+---
+
+## 🎨 Professional Style Guide
+
+- **Bento Logic**: Frequently uses asymmetric grids (e.g., `large-5` with `large-span-2` for brand columns).
+- **Cinematic Overlays**: Images use dark `rgba(0,0,0,0.8)` gradients for bottom-aligned text readability.
+- **Micro-Animations**: Uses subtle `scale(1.1)` on hover and `translateX` for arrow icons.
+- **Hierarchy**: Uses `opacity: 0.7` for secondary descriptions to create depth.
+
+---
+
+## 🚀 Development
+
+```bash
+npm run dev
+```
