@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import SectionTitle from "../Widget/SectionTitle.vue";
 import TestimonialCard from "../Widget/TestimonialCard.vue";
+import { createSlider } from "../../../../plugins/LuxeSlider/LuxeSlider.js";
+import "../../../../plugins/LuxeSlider/LuxeSlider.css";
 
 const testimonials = ref([
   {
@@ -32,21 +34,44 @@ const testimonials = ref([
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1976&auto=format&fit=crop",
   },
 ]);
+
+const trackRef = ref(null);
+let slider = null;
+
+onMounted(() => {
+  if (trackRef.value) {
+    slider = createSlider(trackRef.value, 30); // 30px gap
+  }
+});
+
+const next = () => slider?.next();
+const prev = () => slider?.prev();
 </script>
 
 <template>
   <section class="testimonials-section py-5 bg-light">
     <div class="container">
-      <div class="section-header mb-3">
+      <div class="section-header flex justify-between align-end mb-3">
         <SectionTitle subTitle="Patient Stories" title="Voices of Recovery" />
+
+        <div class="slider-controls flex gap-1">
+          <button class="luxe-arrow" @click="prev">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button class="luxe-arrow" @click="next">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
 
-      <div class="medium-2 large-3 gap-2">
-        <TestimonialCard
-          v-for="item in testimonials"
-          :key="item.id"
-          :testimonial="item"
-        />
+      <div class="luxe-slider">
+        <div class="luxe-slider-track" ref="trackRef">
+          <TestimonialCard
+            v-for="item in testimonials"
+            :key="item.id"
+            :testimonial="item"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -56,6 +81,42 @@ const testimonials = ref([
 .testimonials-section {
   position: relative;
   overflow: hidden;
+}
+.luxe-slider {
+  overflow: hidden;
+  width: 100%;
+}
+.luxe-slider-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+.luxe-slider-track > * {
+  flex: 0 0 calc(33.33% - 20px); /* Desktop 3 items */
+}
+@media (max-width: 992px) {
+  .luxe-slider-track > * {
+    flex: 0 0 calc(50% - 15px); /* Tablet 2 items */
+  }
+}
+@media (max-width: 600px) {
+  .luxe-slider-track > * {
+    flex: 0 0 100%; /* Mobile 1 item */
+  }
+}
+
+.luxe-arrow {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--secondary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.luxe-arrow:hover {
+  background: var(--secondary-color);
+  color: white;
 }
 /* No extra card styles needed here! TestimonialCard handles it. */
 </style>

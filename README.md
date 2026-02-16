@@ -52,6 +52,11 @@ Common design patterns should be abstracted into widgets:
 - **Micro-Animations**: Uses subtle `scale(1.1)` on hover and `translateX` for arrow icons.
 - **Hierarchy**: Uses `opacity: 0.7` for secondary descriptions to create depth.
 
+### 📐 Spacing Philosophy
+
+- **Major Layouts**: Use `grid.css` utilities (e.g., `pt-5`, `gap-2`) for section-level padding and large grid gutters.
+- **Micro-Spacing**: Avoid utility classes for fine-tuned details (like star ratings to text, or names to tags). Instead, use **Scoped CSS** for precise control (e.g., `margin-bottom: 0.75rem`) to maintain a tight, premium editorial feel.
+
 ---
 
 ## 🚀 Development
