@@ -10,6 +10,16 @@
   --color-text-muted: #5a6b65;
   --color-border: #e6eadd;
 
+  /* --primary-color: #0a3d32;
+  --secondary-color: #5c8d7d;
+  --accent-color: #d4e09b;
+  --background-color: #fdfbf7;
+  --surface-color: #ffffff;
+  --surface-alt-color: #f0f4f2;
+  --text-main-color: #1a2e29;
+  --text-muted-color: #5a6b65;
+  --border-color: #e6eadd; */
+
   /* Typography */
   --font-family: "Outfit", sans-serif;
   --font-size-base: 16px;
@@ -82,15 +92,10 @@ h5 {
 
 p {
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
+  margin: 0.75rem 0;
 }
 
 /* Utility Classes */
-.container {
-  padding: 0 var(--container-padding);
-  max-width: 1600px;
-  margin: 0 auto;
-}
 
 .btn {
   display: inline-flex;
