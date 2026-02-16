@@ -3,8 +3,9 @@
   <section class="ceo-section reveal-up">
     <div class="ceo-image-wrapper">
       <img
-        src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070&auto=format&fit=crop"
+        src="https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=2070&auto=format&fit=crop"
         style="width: 100%; display: block"
+        alt="Dr. Adrian Weiss"
       />
     </div>
     <div>

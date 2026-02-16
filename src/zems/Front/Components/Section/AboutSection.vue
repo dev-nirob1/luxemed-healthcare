@@ -9,12 +9,12 @@ import SectionTitle from "../Widget/SectionTitle.vue";
         <div class="image">
           <img
             class="img1"
-            src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2091&auto=format&fit=crop"
-            alt=""
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
+            alt="LuxeMed Architecture"
           /><img
             class="img2"
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
-            alt=""
+            src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop"
+            alt="Robotic Surgery Facility"
           />
         </div>
         <div class="content">

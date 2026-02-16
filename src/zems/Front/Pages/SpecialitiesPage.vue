@@ -88,7 +88,7 @@ import { RouterLink } from "vue-router";
     <div class="service-card">
       <div class="card-image">
         <img
-          src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2073&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2?q=80&w=2073&auto=format&fit=crop"
         />
       </div>
       <div class="card-content">
