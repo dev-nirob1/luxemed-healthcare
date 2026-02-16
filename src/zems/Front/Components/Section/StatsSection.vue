@@ -1,60 +1,37 @@
 <template>
-  <div class="stats-section">
-    <div class="container stats-strip">
-      <div class="stat-box">
-        <h3>99%</h3>
-        <p>Patient Satisfaction</p>
-      </div>
-      <div class="stat-box">
-        <h3>15m</h3>
-        <p>Wait Time (Avg)</p>
-      </div>
-      <div class="stat-box">
-        <h3>24/7</h3>
-        <p>AI Monitoring</p>
-      </div>
-      <div class="stat-box">
-        <h3>50+</h3>
-        <p>Specialists</p>
-      </div>
-    </div>
-  </div>
+  <section class="stats-section bg-primary">
+    <ul class="container medium-2 large-4 gap-2">
+      <ListItem>
+        <BaseTitle>99%</BaseTitle>
+        <BaseParagraph>Patient Satisfaction</BaseParagraph>
+      </ListItem>
+      <ListItem>
+        <BaseTitle>15m</BaseTitle>
+        <BaseParagraph>Wait Time (Avg)</BaseParagraph>
+      </ListItem>
+      <ListItem>
+        <BaseTitle>24/7</BaseTitle>
+        <BaseParagraph>AI Monitoring</BaseParagraph>
+      </ListItem>
+      <ListItem>
+        <BaseTitle>50+</BaseTitle>
+        <BaseParagraph>Specialists</BaseParagraph>
+      </ListItem>
+    </ul>
+  </section>
 </template>
 <style scoped>
 .stats-section {
   padding: 3.75rem 0;
-  background: var(--color-primary);
 }
-.stats-strip {
-  display: flex;
-  justify-content: space-around;
-  color: white;
-  z-index: 10;
-  position: relative;
-  box-shadow: var(--shadow-lg);
-}
-
-.stat-box {
+.stats-section ul li {
   text-align: center;
+  color: var(--white-color);
 }
-
-.stat-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-  color: var(--color-accent);
+.stats-section ul li .title {
+  color: var(--accent-color);
 }
-
-.stat-box p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-@media (max-width: 768px) {
-  .stats-strip {
-    flex-direction: column;
-    gap: 40px;
-  }
+.stats-section ul li p {
+  font-size: 1.25rem;
 }
 </style>
