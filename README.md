@@ -21,9 +21,10 @@ This project follows a **Widget + Elements + Utility Grid** architecture to ensu
 
 Never use raw HTML tags for core content. Always use the globally registered atomic components:
 
-- `<BaseTitle>` (Heading 1/2)
-- `<SubTitle>` (Heading 3/4)
-- `<BaseParagraph>` (Standard Text)
+- `<BaseTitle>` (Renders `h3.title`)
+- `<SubTitle>` (Renders `h5.sub-title`)
+- `<BaseParagraph>` (Renders `p`)
+
 - `<BaseImage>` (Optimized images with lazy loading)
 - `<ListItem>` (Standardized list entries)
 
@@ -56,6 +57,10 @@ Common design patterns should be abstracted into widgets:
 
 - **Major Layouts**: Use `grid.css` utilities (e.g., `pt-5`, `gap-2`) for section-level padding and large grid gutters.
 - **Micro-Spacing**: Avoid utility classes for fine-tuned details (like star ratings to text, or names to tags). Instead, use **Scoped CSS** for precise control (e.g., `margin-bottom: 0.75rem`) to maintain a tight, premium editorial feel.
+- **Image Wrappers**: Use the class `.image` for all full-project image wrappers. Styles should be modified within the scoped CSS of the component as needed.
+- **Paragraphs & Tags**: Avoid using classes on `<BaseParagraph>` or other atomic tags unless a forceful style change is required. Prefer using the same class for the same tag type within a component for consistency.
+  > [!IMPORTANT]
+  > Since these are Vue components, scoped CSS should target the **underlying HTML tag** (e.g., `p`) or the **internal component class** (e.g., `.title`, `.sub-title`) rather than the component name itself.
 
 ---
 
