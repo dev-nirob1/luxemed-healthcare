@@ -1,205 +1,160 @@
+<script setup>
+import SectionTitle from "../Widget/SectionTitle.vue";
+const stats = [
+  { value: "15k", label: "Surgeries" },
+  { value: "99%", label: "Satisfaction" },
+  { value: "350", label: "Specialists" },
+  { value: "24/7", label: "Care" },
+];
+</script>
+
 <template>
-  <!-- 2. Bento Highlights -->
-  <section class="feature-grid">
-    <!-- Large Image with Parallax feel -->
-    <div
-      class="feature-card span-12 reveal-up"
-      style="padding: 0; height: 600px; border: none"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
-        style="width: 100%; height: 100%; object-fit: cover"
+  <section class="blueprint-section py-5">
+    <div class="container">
+      <SectionTitle
+        class="mb-3"
+        sub-title="Our Architecture"
+        title="The Sanctuary Campus"
       />
-      <div
-        style="
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          padding: 60px;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-          color: white;
-        "
-      >
-        <h3 style="font-size: 2.5rem; margin-bottom: 10px">
-          The Sanctuary Campus
-        </h3>
-        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 500px">
-          Biophilic design meets sterile precision.
-        </p>
-      </div>
-    </div>
 
-    <!-- Mission -->
-    <div
-      class="feature-card span-6 reveal-up"
-      style="display: flex; flex-direction: column; justify-content: center"
-    >
-      <span class="hero-tag" style="align-self: flex-start"
-        >Our Philosophy</span
-      >
-      <p class="mission-statement">
-        "We believe healthcare should be
-        <span style="color: var(--color-secondary); font-style: italic"
-          >predictive</span
-        >, not just reactive. We solve problems before they start."
-      </p>
-    </div>
+      <div class="container">
+        <!-- Single Cinematic Image Layer -->
+        <div class="reality-stack">
+          <div class="image">
+            <BaseImage
+              image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
+              alt="Sanctuary Campus"
+            />
+          </div>
 
-    <!-- Stats with clean typography -->
-    <div class="feature-card span-6 reveal-up">
-      <div
-        style="
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          text-align: center;
-        "
-      >
-        <div>
-          <h3
-            style="
-              font-size: 3.5rem;
-              color: var(--color-secondary);
-              margin-bottom: 0px;
-              line-height: 1;
-            "
-          >
-            15k<span style="font-size: 1.5rem">+</span>
-          </h3>
-          <p
-            style="
-              text-transform: uppercase;
-              font-size: 0.8rem;
-              letter-spacing: 1px;
-              margin-top: 10px;
-            "
-          >
-            Surgeries
-          </p>
+          <!-- Floating Legend (Static) -->
+          <div class="blueprint-legend">
+            <div class="legend-header">
+              <span class="code">PROJECT: LUXE-01</span>
+              <span class="status">PHASE: REALIZED</span>
+            </div>
+            <SubTitle>The Sanctuary Campus</SubTitle>
+            <BaseParagraph>
+              A synthesis of biophilic architecture and sterile precision.
+            </BaseParagraph>
+          </div>
         </div>
-        <div>
-          <h3
-            style="
-              font-size: 3.5rem;
-              color: var(--color-secondary);
-              margin-bottom: 0px;
-              line-height: 1;
-            "
-          >
-            99<span style="font-size: 1.5rem">%</span>
-          </h3>
-          <p
-            style="
-              text-transform: uppercase;
-              font-size: 0.8rem;
-              letter-spacing: 1px;
-              margin-top: 10px;
-            "
-          >
-            Satisfaction
-          </p>
-        </div>
-        <div>
-          <h3
-            style="
-              font-size: 3.5rem;
-              color: var(--color-secondary);
-              margin-bottom: 0px;
-              line-height: 1;
-            "
-          >
-            350
-          </h3>
-          <p
-            style="
-              text-transform: uppercase;
-              font-size: 0.8rem;
-              letter-spacing: 1px;
-              margin-top: 10px;
-            "
-          >
-            Specialists
-          </p>
-        </div>
-        <div>
-          <h3
-            style="
-              font-size: 3.5rem;
-              color: var(--color-secondary);
-              margin-bottom: 0px;
-              line-height: 1;
-            "
-          >
-            24<span style="font-size: 1.5rem">/7</span>
-          </h3>
-          <p
-            style="
-              text-transform: uppercase;
-              font-size: 0.8rem;
-              letter-spacing: 1px;
-              margin-top: 10px;
-            "
-          >
-            Emergency
-          </p>
+
+        <div class="mt-5">
+          <div class="medium-2 gap-2">
+            <div class="text-block">
+              <BaseTitle>Vision Realized.</BaseTitle>
+              <BaseParagraph>
+                We believe that healing begins with the environment. Our campus
+                is designed to reduce patient stress through natural fractals
+                and light optimization.
+              </BaseParagraph>
+              <BaseParagraph>
+                This approach has resulted in a 30% reduction in patient anxiety
+                and a 20% faster recovery time.
+              </BaseParagraph>
+            </div>
+            <div class="medium-2 gap-1">
+              <div
+                v-for="stat in stats"
+                :key="stat.label"
+                class="blueprint-stat"
+              >
+                <BaseTitle>{{ stat.value }}</BaseTitle>
+                <BaseParagraph>{{ stat.label }}</BaseParagraph>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-<style scoped>
-/* Bento Grid Highlights */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  padding: 0 6% 100px;
-  max-width: 1600px;
-  margin: 0 auto;
-}
 
-.feature-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 32px;
-  padding: 50px;
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
+<style scoped>
+.blueprint-section {
+  background: var(--surface-alt-color);
   overflow: hidden;
 }
 
-.feature-card:hover {
-  transform: translateY(-8px) scale(1.005);
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.9);
+.reality-stack {
+  position: relative;
+  height: 70vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
 }
 
-/* Grid Spanning logic */
-.span-12 {
-  grid-column: span 12;
-}
-.span-6 {
-  grid-column: span 6;
-}
-.span-4 {
-  grid-column: span 4;
-}
-.span-8 {
-  grid-column: span 8;
+.image {
+  width: 100%;
+  height: 100%;
 }
 
-.mission-statement {
-  font-size: 2.2rem;
-  line-height: 1.3;
-  color: var(--color-primary);
-  font-weight: 300;
-  letter-spacing: -0.02em;
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text-block p {
+  font-size: 1.25rem;
+}
+/* Floating Legend */
+.blueprint-legend {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: var(--primary-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 24px;
+  color: white;
+  max-width: 400px;
+  z-index: 10;
+}
+
+.legend-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+.blueprint-legend .sub-title {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.blueprint-legend p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.blueprint-stat {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.blueprint-stat p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .reality-stack {
+    height: 60vh;
+  }
+  .blueprint-legend {
+    left: 20px;
+    right: 20px;
+    bottom: 0.5rem;
+    padding: 1rem;
+  }
 }
 </style>

@@ -106,7 +106,6 @@ defineProps({
 }
 
 .details-btn:hover {
-  color: var(--secondary-color);
   gap: 15px;
 }
 </style>
