@@ -1,155 +1,150 @@
+<script setup>
+import { ref, reactive } from "vue";
+
+const isSubmitting = ref(false);
+const isSuccess = ref(false);
+
+const booking = reactive({
+  department: "",
+  phone: "",
+  date: "",
+  timeSlot: "Morning (9AM - 12PM)",
+});
+
+const handleBooking = (e) => {
+  e.preventDefault();
+  isSubmitting.value = true;
+
+  // Simulate API call
+  setTimeout(() => {
+    isSubmitting.value = false;
+    isSuccess.value = true;
+  }, 1500);
+};
+</script>
+
 <template>
   <div class="booking-wrapper">
     <div class="booking-container">
       <!-- Form Side -->
-      <div class="booking-form-section">
-        <!-- Removed 'Step 1 of 2' -->
-        <h1 style="margin-top: 10px">Schedule Your Visit</h1>
-        <p style="color: #666; margin-bottom: 30px">
+      <div class="booking-form-section" :class="{ 'fade-out': isSuccess }">
+        <BaseTitle style="margin-top: 10px">Schedule Your Visit</BaseTitle>
+        <BaseParagraph class="mb-5 text-muted">
           Direct scheduling with our AI concierge.
-        </p>
+        </BaseParagraph>
 
-        <form
-          class="form-grid"
-          id="bookingForm"
-          onsubmit="handleBooking(event)"
-        >
+        <form @submit="handleBooking" class="form-grid">
           <div class="input-group">
             <label>Specialty Department</label>
-            <select required>
+            <SelectDropdown v-model="booking.department" required>
               <option value="">Select Department...</option>
               <option>Cardiology</option>
               <option>Neurology</option>
               <option>Pediatrics</option>
               <option>General Surgery</option>
-            </select>
+            </SelectDropdown>
           </div>
 
-          <!-- Replaced Consultation Type with Phone -->
           <div class="input-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="+1 (555) 000-0000" required />
+            <InputField
+              v-model="booking.phone"
+              type="tel"
+              placeholder="+1 (555) 000-0000"
+              required
+            />
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+          <div class="date-time-grid">
             <div class="input-group">
               <label>Preferred Date</label>
-              <input type="date" required />
+              <InputField v-model="booking.date" type="date" required />
             </div>
             <div class="input-group">
               <label>Time Slot</label>
-              <select>
+              <SelectDropdown v-model="booking.timeSlot">
                 <option>Morning (9AM - 12PM)</option>
                 <option>Afternoon (1PM - 5PM)</option>
                 <option>Evening (6PM - 9PM)</option>
-              </select>
+              </SelectDropdown>
             </div>
           </div>
 
-          <button type="submit" class="confirm-btn">Confirm Appointment</button>
+          <BaseButton
+            type="submit"
+            class="bg-primary text-white"
+            :disabled="isSubmitting"
+          >
+            {{ isSubmitting ? "Processing..." : "Confirm Appointment" }}
+          </BaseButton>
         </form>
       </div>
 
-      <!-- Success Message Overlay (Hidden by default) -->
-      <div class="success-overlay" id="successScreen">
-        <div class="success-icon"><i class="fas fa-check"></i></div>
-        <h2 style="color: var(--color-primary); margin-bottom: 10px">
-          Booking Confirmed!
-        </h2>
-        <p
-          style="
-            color: #666;
-            line-height: 1.6;
-            max-width: 400px;
-            margin-bottom: 30px;
-          "
-        >
+      <!-- Success Message Overlay -->
+      <div class="success-overlay" :class="{ active: isSuccess }">
+        <div class="success-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <BaseTitle class="mb-2">Booking Confirmed!</BaseTitle>
+        <BaseParagraph class="success-message">
           Thank you! Our concierge team has received your request and will
           contact you via phone shortly to finalize details.
-        </p>
-        <button
-          class="btn btn-primary"
-          onclick="window.location.href = '../index.html'"
-        >
-          Return Home
-        </button>
+        </BaseParagraph>
+        <RouterLink to="/" class="btn back-home-btn"> Return Home </RouterLink>
       </div>
 
       <!-- Info Side -->
       <div class="booking-info-section">
-        <div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 20px">
-            Why Choose LuxeMed?
-          </h3>
-          <ul style="list-style: none; padding: 0">
-            <li
-              style="
-                margin-bottom: 20px;
-                display: flex;
-                gap: 15px;
-                align-items: flex-start;
-              "
-            >
-              <i
-                class="fas fa-check-circle"
-                style="color: var(--color-secondary); margin-top: 5px"
-              ></i>
-              <div>
+        <div class="benefits-content">
+          <BaseTitle class="info-title">Why Choose LuxeMed?</BaseTitle>
+          <ul class="benefit-list">
+            <li>
+              <div class="benefit-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-text">
                 <strong>Zero Wait Time</strong>
-                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 5px">
+                <BaseParagraph>
                   Our AI scheduling ensures you are seen exactly when booked.
-                </p>
+                </BaseParagraph>
               </div>
             </li>
-            <li
-              style="
-                margin-bottom: 20px;
-                display: flex;
-                gap: 15px;
-                align-items: flex-start;
-              "
-            >
-              <i
-                class="fas fa-user-md"
-                style="color: var(--color-secondary); margin-top: 5px"
-              ></i>
-              <div>
+            <li>
+              <div class="benefit-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="benefit-text">
                 <strong>Top Specialists</strong>
-                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 5px">
+                <BaseParagraph>
                   Direct access to global leaders in medicine.
-                </p>
+                </BaseParagraph>
               </div>
             </li>
           </ul>
         </div>
 
-        <div
-          style="
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 16px;
-          "
-        >
-          <h4 style="margin-bottom: 10px">Need Help?</h4>
-          <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px">
-            Call our concierge for immediate assistance.
-          </p>
-          <div style="font-weight: 700; font-size: 1.2rem">+41 44 123 4567</div>
+        <div class="help-box">
+          <BaseTitle class="help-title">Need Help?</BaseTitle>
+          <BaseParagraph
+            >Call our concierge for immediate assistance.</BaseParagraph
+          >
+          <div class="phone-number">+41 44 123 4567</div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<style>
+
+<style scoped>
 .booking-wrapper {
-  flex: 1;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px 80px;
+  padding: 5rem 0;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(212, 224, 155, 0.2) 0%,
+    rgba(var(--primary-rgb, 17, 43, 40), 0.05) 0%,
     transparent 70%
   );
 }
@@ -157,96 +152,146 @@
 .booking-container {
   background: white;
   width: 100%;
-  max-width: 900px;
-  border-radius: 32px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  border-radius: 2rem;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   position: relative;
-  min-height: 550px;
+  min-height: 600px;
 }
 
 .booking-form-section {
-  padding: 50px;
-  transition: 0.3s;
+  padding: 60px;
+  transition: all 0.5s ease;
+}
+
+.booking-form-section.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
 }
 
 .booking-info-section {
-  background: var(--color-primary);
+  background: var(--primary-color);
   color: white;
-  padding: 50px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
 }
 
-.booking-info-section::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+.info-title {
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
 }
 
-h1 {
-  font-size: 2rem;
-  color: var(--color-primary);
-  margin-bottom: 10px;
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-list li {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.benefit-icon {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.benefit-text strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.benefit-text p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  color: white;
+}
+
+.help-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.help-title {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.help-box p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.phone-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
 }
 
 .form-grid {
   display: grid;
+  gap: 25px;
+}
+
+.date-time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 500;
-  color: #444;
-  font-size: 0.95rem;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.input-group input,
-.input-group select {
+.input-group :deep(input),
+.input-group :deep(select) {
   width: 100%;
-  padding: 14px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: var(--surface-color);
   font-family: inherit;
-  background: #fafbf8;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
-.input-group input:focus,
-.input-group select:focus {
+
+.input-group :deep(input):focus,
+.input-group :deep(select):focus {
   outline: none;
+  border-color: var(--primary-color);
   background: white;
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 4px rgba(212, 224, 155, 0.2);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb, 17, 43, 40), 0.05);
 }
 
 .confirm-btn {
   width: 100%;
-  padding: 16px;
-  background: var(--color-secondary);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 1.1rem;
   font-weight: 600;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-.confirm-btn:hover {
-  background: #bbc988;
-  transform: translateY(-2px);
+  letter-spacing: 0.5px;
 }
 
 /* Success Overlay */
@@ -262,38 +307,74 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 60px;
   opacity: 0;
   pointer-events: none;
-  transition: 0.5s ease;
-  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(1.1);
   z-index: 10;
 }
+
 .success-overlay.active {
   opacity: 1;
   pointer-events: all;
-  transform: translateY(0);
+  transform: scale(1);
 }
+
 .success-icon {
-  width: 80px;
-  height: 80px;
-  background: #e6f4ea;
-  color: #1e8e3e;
+  width: 100px;
+  height: 100px;
+  background: var(--surface-color);
+  color: var(--secondary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 900px) {
+.success-message {
+  max-width: 450px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.back-home-btn {
+  padding: 15px 40px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991px) {
   .booking-container {
     grid-template-columns: 1fr;
+    max-width: 600px;
   }
+
+  .booking-form-section {
+    padding: 40px;
+  }
+
   .booking-info-section {
     padding: 40px;
     order: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .date-time-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

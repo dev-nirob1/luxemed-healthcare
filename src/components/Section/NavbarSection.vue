@@ -48,7 +48,9 @@ onMounted(() => {
             <RouterLink to="/contact">Contact</RouterLink>
           </ListItem>
           <ListItem>
-            <BaseButton class="bg-primary text-white">Appointment</BaseButton>
+            <RouterLink class="btn bg-primary text-white" to="/appointment"
+              >Appointment</RouterLink
+            >
           </ListItem>
         </ul>
       </nav>
@@ -57,7 +59,7 @@ onMounted(() => {
 </template>
 <style scoped>
 header {
-  padding: 0.75rem 0;
+  padding: 1rem 0;
   background: var(--white-color);
 }
 
