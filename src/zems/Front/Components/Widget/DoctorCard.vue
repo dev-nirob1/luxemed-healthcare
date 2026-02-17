@@ -99,6 +99,17 @@ defineProps({
   display: block;
 }
 
+.card-content .sub-title {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  margin-bottom: 1.5rem;
+}
+
 .book-btn {
   border: 1px solid var(--border-color);
   transition: 0.3s;

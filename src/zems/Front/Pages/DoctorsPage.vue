@@ -92,12 +92,4 @@ const filteredDoctors = computed(() => {
   </div>
 </template>
 
-<style scoped>
-/* Filter Bar */
-.filter-bar {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-</style>
+<style scoped></style>
