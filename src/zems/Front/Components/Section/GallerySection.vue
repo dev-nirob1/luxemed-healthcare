@@ -1,10 +1,11 @@
+Diagnostics Suite
 <script setup>
 import { ref } from "vue";
 import SectionTitle from "../Widget/SectionTitle.vue";
 
 const galleryItems = [
   {
-    url: "https://images.unsplash.com/photo-1586773860418-d37222d8fce2?q=80&w=2000&auto=format&fit=crop",
+    url: "https://cdn.pixabay.com/photo/2015/11/18/17/24/surgery-1049588_1280.jpg",
     title: "Surgical Precision",
   },
   {
@@ -16,7 +17,7 @@ const galleryItems = [
     title: "The Lounge",
   },
   {
-    url: "https://images.unsplash.com/photo-1538108149393-fdfd8169093a?q=80&w=2000&auto=format&fit=crop",
+    url: "https://cdn.pixabay.com/photo/2016/09/02/16/17/dentist-1639683_1280.jpg",
     title: "Patient Serenity",
   },
   {
@@ -24,7 +25,7 @@ const galleryItems = [
     title: "Wellness Hall",
   },
   {
-    url: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?q=80&w=2000&auto=format&fit=crop",
+    url: "https://images.pexels.com/photos/6129149/pexels-photo-6129149.jpeg",
     title: "Technology Integrated",
   },
 ];

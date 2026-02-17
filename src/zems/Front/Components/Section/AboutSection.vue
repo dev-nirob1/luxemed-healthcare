@@ -41,7 +41,7 @@ import SectionTitle from "../Widget/SectionTitle.vue";
 </template>
 <style scoped>
 .about-section {
-  padding: 4.75rem 0;
+  padding: 5rem 0 7rem 0;
 }
 .about-section .content p {
   font-size: 1.15rem;
