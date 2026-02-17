@@ -18,7 +18,9 @@ defineProps({
       <span class="doc-dept">{{ doctor.dept }}</span>
       <SubTitle>{{ doctor.name }}</SubTitle>
       <BaseParagraph>{{ doctor.qual }}</BaseParagraph>
-      <BaseButton class="book-btn width-full">Book Appointment</BaseButton>
+      <RouterLink to="/appointment" class="btn book-btn width-full"
+        >Book Appointment</RouterLink
+      >
     </div>
   </div>
 </template>

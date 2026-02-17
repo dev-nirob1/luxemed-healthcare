@@ -69,13 +69,9 @@ const filteredDoctors = computed(() => {
 </script>
 
 <template>
-  <header class="team-hero py-5">
+  <header class="team-hero py-3">
     <div class="container text-center">
       <SectionTitle subTitle="Specialists" title="Review The Best" />
-      <BaseParagraph>
-        Our board-certified specialists are leaders in their fields, dedicated
-        to providing compassionate, cutting-edge care.
-      </BaseParagraph>
     </div>
   </header>
 
