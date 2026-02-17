@@ -30,12 +30,12 @@ const history = [
 </script>
 
 <template>
-  <section class="history-section bg-light py-5">
+  <section class="history-vertical py-5">
     <div class="container">
       <SectionTitle
         subTitle="Legacy of Innovation"
         title="Our Journey Through Time"
-        class="text-center mb-5"
+        class="mb-5"
       />
 
       <div class="vertical-timeline">
@@ -66,9 +66,10 @@ const history = [
 </template>
 
 <style scoped>
-.history-section {
-  background: var(--surface-alt-color);
-  overflow: hidden;
+.history-vertical {
+  background: var(--surface-color);
+  padding: 100px 0;
+  border-bottom: 2px dashed var(--border-color);
 }
 
 .vertical-timeline {
@@ -124,6 +125,7 @@ const history = [
   line-height: 1;
   color: var(--primary-color);
   opacity: 0.15;
+  transition: opacity 0.3s ease;
 }
 
 .dot-marker {
@@ -136,7 +138,6 @@ const history = [
   background: var(--white-color);
   border: 4px solid var(--primary-color);
   border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--surface-color);
 }
 
 .row-reverse .dot-marker {
@@ -147,7 +148,7 @@ const history = [
 .content-card {
   background: var(--white-color);
   padding: 3rem;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-color);
 }
@@ -161,7 +162,6 @@ const history = [
 @media (max-width: 991px) {
   .center-line {
     left: 20px;
-    transform: none;
   }
   .timeline-row {
     grid-template-columns: 1fr;

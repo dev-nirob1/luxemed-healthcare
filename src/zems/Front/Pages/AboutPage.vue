@@ -9,7 +9,9 @@ import TrustedSection from "../Components/Section/TrustedSection.vue";
 <template>
   <FeatureSection />
   <CeoSection />
+
   <HistorySection />
+
   <FacillitiesSection />
   <TrustedSection />
 </template>
