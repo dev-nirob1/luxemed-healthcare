@@ -1,104 +1,106 @@
+<script setup>
+import SectionTitle from "../Widget/SectionTitle.vue";
+
+// No script logic needed
+</script>
+
 <template>
-  <!-- 3. Leadership Message -->
-  <section class="ceo-section reveal-up">
-    <div class="ceo-image-wrapper">
-      <img
-        src="https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=2070&auto=format&fit=crop"
-        style="width: 100%; display: block"
-        alt="Dr. Adrian Weiss"
-      />
-    </div>
-    <div>
-      <span class="hero-tag">From the Founder</span>
-      <p class="quote-large">
-        "We didn't set out to build a hospital. We set out to build a place
-        where people actually want to go."
-      </p>
-      <p
-        style="
-          font-size: 1.15rem;
-          line-height: 1.9;
-          color: #555;
-          margin-bottom: 40px;
-        "
-      >
-        When I founded LuxeMed in 2018, I saw a gap in the market. Hospitals
-        were sterile, frightening places. I wanted to create an environment that
-        felt more like a wellness retreat—where the technology is invisible, but
-        the care is omnipresent.
-      </p>
-      <div style="display: flex; align-items: center; gap: 20px">
-        <div>
-          <h4 style="font-size: 1.3rem; font-weight: 700">Dr. Adrian Weiss</h4>
-          <p style="color: #888">Founder & CEO</p>
+  <section class="ceo-section py-5">
+    <div class="container medium-2 gap-2">
+      <!-- Founder Image -->
+      <div class="image">
+        <BaseImage
+          image="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop"
+          alt="Dr. Adrian Weiss"
+        />
+      </div>
+
+      <!-- Content Area -->
+      <div class="content">
+        <SectionTitle
+          subTitle="From the Founder"
+          title="Building a Sanctuary."
+          class="mb-3"
+        />
+
+        <div class="quote-block">
+          <BaseParagraph class="quote-text">
+            "We didn't set out to build a hospital. We set out to build a place
+            where people actually want to go."
+          </BaseParagraph>
+          <BaseParagraph class="main-body">
+            When I founded LuxeMed in 2018, I saw a gap in the market. Hospitals
+            were sterile, frightening places. I wanted to create an environment
+            that felt more like a wellness retreat—where the technology is
+            invisible, but the care is omnipresent.
+          </BaseParagraph>
         </div>
-        <!-- Fake Signature -->
-        <div
-          style="
-            font-family: &quot;Brush Script MT&quot;, cursive;
-            font-size: 2rem;
-            opacity: 0.4;
-          "
-        >
-          Adrian Weiss
+
+        <div class="ceo-signature">
+          <div class="ceo-meta">
+            <BaseTitle>Dr. Adrian Weiss</BaseTitle>
+            <BaseParagraph>Founder & CEO</BaseParagraph>
+          </div>
+          <div class="signature">Adrian Weiss</div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 <style scoped>
-/* CEO Section */
 .ceo-section {
-  background: #fff;
-  padding: 120px 6%;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: center;
-  position: relative;
+  background: var(--surface-color);
 }
 
-.ceo-image-wrapper {
-  height: 100%;
-  position: relative;
-}
-.ceo-image-wrapper img {
-  height: 100%;
+.image {
+  max-height: 500px;
+  width: 100%;
   border-radius: 1rem;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
-}
-.ceo-image-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transform: translate(20px, 20px);
-  z-index: -1;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
 }
 
-.quote-large {
-  font-size: 1.25rem;
-  font-family: serif; /* Luxurious touch */
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-family: serif;
   font-style: italic;
-  color: var(--color-primary);
-  line-height: 1.2;
-  margin: 2rem 0;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  line-height: 1.4;
   position: relative;
 }
-.quote-large::before {
-  content: "“";
-  position: absolute;
-  top: -40px;
-  left: -20px;
-  font-size: 8rem;
-  color: rgba(212, 224, 155, 0.3);
-  font-family: sans-serif;
-  z-index: -1;
+
+.main-body {
+  font-size: 1.25rem;
+  color: var(--text-muted-color);
 }
-@media (max-width: 768px) {
-  .ceo-section {
-    grid-template-columns: 1fr;
-  }
+
+/* Footer & Signature */
+.ceo-signature {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ceo-meta p {
+  color: var(--text-muted-color);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.signature {
+  font-family: "Brush Script MT", cursive;
+  font-size: 3rem;
+  opacity: 0.4;
+  color: var(--primary-color);
+  user-select: none;
 }
 </style>

@@ -74,20 +74,19 @@ const stats = [
 <style scoped>
 .blueprint-section {
   background: var(--surface-alt-color);
-  overflow: hidden;
 }
 
 .reality-stack {
   position: relative;
   height: 70vh;
-  border-radius: 1rem;
-  overflow: hidden;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
 }
 
 .image {
   width: 100%;
   height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .image img {
@@ -153,7 +152,7 @@ const stats = [
   .blueprint-legend {
     left: 20px;
     right: 20px;
-    bottom: 0.5rem;
+    bottom: -3rem;
     padding: 1rem;
   }
 }
