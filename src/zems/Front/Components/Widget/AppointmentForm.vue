@@ -27,7 +27,7 @@ const handleBooking = (e) => {
 
 <template>
   <div class="appointment-form-widget">
-    <BaseTitle style="margin-top: 10px">Schedule Your Visit</BaseTitle>
+    <BaseTitle>Schedule Your Visit</BaseTitle>
     <BaseParagraph class="mb-3">
       Direct scheduling with our AI concierge.
     </BaseParagraph>

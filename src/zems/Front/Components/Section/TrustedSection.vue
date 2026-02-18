@@ -15,9 +15,9 @@
 <style scoped>
 .trusted-section {
   background: #14201a;
-  padding: 100px 6%;
+  padding: 100px 0;
   text-align: center;
-  color: white;
+  color: var(--white-color);
 }
 
 .accreditation-tagline {
@@ -48,7 +48,7 @@
 
 @media (max-width: 768px) {
   .trusted-section {
-    padding: 60px 2%;
+    padding: 60px 0;
   }
 
   .accreditation-icons {
