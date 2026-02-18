@@ -20,8 +20,8 @@ const handleBooking = (e) => {
   // Simulate API call
   setTimeout(() => {
     isSubmitting.value = false;
-    emit("success");
-  }, 1500);
+    alert("successfully booked");
+  }, 1000);
 };
 </script>
 
