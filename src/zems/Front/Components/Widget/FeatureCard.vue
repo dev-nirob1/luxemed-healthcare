@@ -17,12 +17,12 @@ defineProps({
 
 <template>
   <div class="feature-card">
-    <div class="icon-section">
+    <div class="icon">
       <i :class="[icon, 'feature-icon']"></i>
     </div>
     <div class="content-section">
-      <h4 class="feature-title">{{ title }}</h4>
-      <BaseParagraph class="feature-description">
+      <SubTitle>{{ title }}</SubTitle>
+      <BaseParagraph>
         {{ description }}
       </BaseParagraph>
     </div>
@@ -31,37 +31,24 @@ defineProps({
 
 <style scoped>
 .feature-card {
-  background: #f0f4f2;
+  background: var(--surface-alt-color);
   padding: 30px;
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-  background: white;
+  background: var(--white-color);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   transform: translateY(-5px);
 }
 
-.icon-section {
+.icon {
   margin-bottom: 1.5rem;
 }
 
 .feature-icon {
   font-size: 2rem;
   color: var(--color-primary);
-}
-
-.feature-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text);
-  font-weight: 700;
-}
-
-.feature-description {
-  font-size: 1rem;
-  margin-bottom: 0;
-  line-height: 1.6;
 }
 </style>

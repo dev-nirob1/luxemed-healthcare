@@ -29,7 +29,7 @@ const technologies = [
 
       <!-- Content Split -->
       <div class="large-9 gap-2 align-start mt-3">
-        <div class="large-span-6">
+        <div class="content large-span-6">
           <BaseTitle> Neuro-Excellence </BaseTitle>
           <BaseParagraph>
             The LuxeMed Neurology Center offers world-class care for complex
@@ -42,15 +42,17 @@ const technologies = [
             that prioritize patient comfort and long-term cognitive health.
           </BaseParagraph>
 
-          <BaseTitle class="mb-2"> Technologies </BaseTitle>
-          <div class="medium-2 gap-2">
-            <FeatureCard
-              v-for="(tech, index) in technologies"
-              :key="index"
-              :icon="tech.icon"
-              :title="tech.title"
-              :description="tech.description"
-            />
+          <div class="my-2">
+            <BaseTitle class="mb-1"> Technologies </BaseTitle>
+            <div class="medium-2 gap-2">
+              <FeatureCard
+                v-for="(tech, index) in technologies"
+                :key="index"
+                :icon="tech.icon"
+                :title="tech.title"
+                :description="tech.description"
+              />
+            </div>
           </div>
         </div>
 
@@ -80,6 +82,9 @@ const technologies = [
   object-fit: cover;
   overflow: hidden;
   border-radius: 1rem;
+}
+.speciality-details .content p {
+  font-size: 1.15rem;
 }
 .speciality-details .image img {
   width: 100%;
